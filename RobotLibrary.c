@@ -57,10 +57,7 @@ int main()
 
     }
     } while ( roomNumber != -1 );
-
-
-
-
+  
   return 0;
 }
 
