@@ -1,0 +1,29 @@
+/**
+ * This class contains the information for every graduate engineering student
+ * @author Aaron Ambrose
+ */
+public class GraduateStudentE extends EngineeringStudent{
+    private final int fullLoad = 9;
+    private final String status = "Graduate";
+
+    public GraduateStudentE(String firstName, String lastName, String studentID, int hours) {
+        super(firstName, lastName, studentID, hours);
+    }
+
+    /**
+     * Calculates how many hours the student is taking over the standard full load
+     * @return hours over full load
+     */
+    public int getHoursOverFullLoad(){
+        if(getHours()<=getFullLoad()){ return 0; }
+        else{ return getHours()-getFullLoad(); }
+    }
+
+    public int getFullLoad() {
+        return fullLoad;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+}
