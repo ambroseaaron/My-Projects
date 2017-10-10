@@ -1,0 +1,88 @@
+#N canvas 173 0 1729 960 24;
+#X obj -2539 707 output~;
+#X obj -2539 625 *~ 0.7;
+#N canvas 0 22 669 536 (subpatch) 0;
+#X array wt1 100 float 1;
+#A 0 0.612502 -0.756782 -0.923362 -0.819087 -0.980558 -0.803348 0.40289
+0.426375 -0.975499 0.593087 0.459227 0.03762 -0.662711 0.100962 0.0829443
+0.733138 -0.760806 0.203661 -0.496573 -0.211452 -0.400995 0.308885
+0.107777 -0.604027 -0.611461 0.358023 -0.293568 -0.476583 -0.301734
+0.935534 -0.701202 -0.725864 -0.747067 -0.121684 -0.66113 0.746013
+-0.572813 -0.614916 -0.499143 -0.609061 0.761207 -0.374255 -0.0551905
+0.874182 0.97632 0.850772 0.0822406 0.433763 0.490632 0.000579251 0.841755
+0.739833 -0.565347 -0.185102 0.434671 0.254047 0.166917 0.44215 -0.379351
+0.0889375 -0.710387 -0.451176 0.473311 -0.632707 -0.835793 0.92885
+0.645871 -0.91847 0.927065 -0.387025 -0.863242 0.453068 -0.994916 -0.521864
+-0.444761 -0.208293 -0.868689 -0.643162 0.887048 -0.145 -0.13943 -0.353473
+-0.239992 -0.292372 -0.414911 -0.581036 0.209656 -0.919222 -0.949877
+0.0296025 0.94487 -0.768485 -0.630423 -0.773037 0.113492 0.302156 -0.458363
+-0.237993 -0.432046 -0.820349;
+#X coords 0 1 99 -1 200 140 1;
+#X restore -2235 180 graph;
+#X obj -2540 558 tabread4~ wt1;
+#X obj -2540 490 *~ 100;
+#X obj -2541 421 phasor~;
+#X floatatom -2539 363 5 0 0 0 - - -;
+#X msg -2257 10 \; wt1 write sound1.txt;
+#X obj -2537 327 r Freq;
+#X obj -2474 11 noise~;
+#X obj -2477 60 tabwrite~ wt1;
+#X obj -2378 22 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -2435 422 r Tsize;
+#X msg -2320 351 \; wt1 resize 100 \; Tsize 100 \; wt1 read sound1.txt
+\; Freq 199 \;;
+#X msg -2259 77 \; wt1 write sound2.txt;
+#X msg -2036 352 \; wt1 resize 100 \; Tsize 100 \; wt1 read sound2.txt
+\; Freq 350 \;;
+#X msg -2321 493 \; wt1 resize 100 \; Tsize 100 \; wt1 read sound3.txt
+\; Freq 250 \;;
+#X msg -1992 11 \; wt1 write sound3.txt;
+#X msg -2036 495 \; wt1 resize 100 \; Tsize 100 \; wt1 read sound4.txt
+\; Freq 150 \;;
+#X msg -2327 630 \; wt1 resize 100 \; Tsize 100 \; wt1 read sound5.txt
+\; Freq 425 \;;
+#X msg -1992 80 \; wt1 write sound4.txt;
+#X msg -1988 155 \; wt1 write sound5.txt;
+#N canvas 0 0 942 960 preset 0;
+#X obj 104 104 hradio 20 1 0 5 empty empty empty 0 -8 0 10 -262144
+-1 -1 4;
+#X floatatom 103 129 5 0 0 0 - - -;
+#X obj 86 169 sel 0 1 2 3 4;
+#X msg -309 142 \; wt1 resize 100 \; Tsize 100 \; wt1 read sound1.txt
+\; Freq 199 \;;
+#X msg -304 334 \; wt1 resize 100 \; Tsize 100 \; wt1 read sound2.txt
+\; Freq 350 \;;
+#X msg 48 317 \; wt1 resize 100 \; Tsize 100 \; wt1 read sound3.txt
+\; Freq 250 \;;
+#X msg 325 370 \; wt1 resize 100 \; Tsize 100 \; wt1 read sound4.txt
+\; Freq 150 \;;
+#X msg 318 198 \; wt1 resize 100 \; Tsize 100 \; wt1 read sound5.txt
+\; Freq 425 \;;
+#X text 338 340 Car Horn;
+#X text -244 308 Buzzing Bee;
+#X text -300 103 Fire Alarm;
+#X text 330 161 Plane Flying;
+#X text 70 286 Belt on a Machine;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 2 2 5 0;
+#X connect 2 3 6 0;
+#X connect 2 4 7 0;
+#X coords 0 -1 1 1 110 60 2 100 100;
+#X restore -2623 5 pd preset;
+#X text -1983 319;
+#X text -2613 119 1: Fire Alarm 2: Buzzing Bee 3: Belt on a Machine
+4: Car Horn 5: Plane Flying;
+#X connect 1 0 0 0;
+#X connect 1 0 0 1;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X connect 6 0 5 0;
+#X connect 8 0 6 0;
+#X connect 9 0 10 0;
+#X connect 11 0 10 0;
+#X connect 12 0 4 1;

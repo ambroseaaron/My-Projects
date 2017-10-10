@@ -1,0 +1,100 @@
+#N canvas 0 0 942 960 24;
+#X obj -2477 385 output~;
+#X obj -2475 269 osc~;
+#X obj -2475 225 +~;
+#X floatatom -2477 64 5 0 0 0 - - -;
+#X obj -2320 120 *~;
+#X obj -2319 73 osc~;
+#X floatatom -2320 17 5 0 0 0 - - -;
+#X obj -2478 156 phasor~;
+#X obj -2477 118 sig~;
+#X obj -2479 20 r Cf;
+#X obj -2212 72 vline~;
+#X obj -2405 276 vline~;
+#X obj -2476 320 *~;
+#X obj -2406 240 r Amp;
+#X obj -2165 241 unsig~;
+#X floatatom -2167 288 5 0 0 0 - - -;
+#X obj -2385 339 unsig~;
+#X floatatom -2380 387 5 0 0 0 - - -;
+#X obj -2063 136 *~;
+#X obj -2062 89 osc~;
+#X floatatom -2063 33 5 0 0 0 - - -;
+#X obj -1955 88 vline~;
+#X obj -1956 130 unsig~;
+#X floatatom -1956 170 5 0 0 0 - - -;
+#X obj -2320 -48 r Mfa;
+#X obj -2063 -32 r Mfb;
+#X obj -2212 15 r IndexA;
+#X obj -1955 31 r IndexB;
+#X obj -2320 183 +~;
+#N canvas 62 14 1695 639 preset 0;
+#X obj 104 103 hradio 20 1 0 5 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X floatatom 105 130 5 0 0 0 - - -;
+#X obj 105 179 sel 0 1 2 3 4;
+#X text -603 69 Shaking a Flat Saw;
+#X msg -647 99 \; Cf 115 \; Mfa 128 \; Mfb 111 \; IndexA 390 50 0 \,
+109 250 50 \, 450 1100 300 \, 100 500 1400 \; IndexB 270 50 0 \, 54
+250 50 \, 600 1100 300 \, 200 500 1400 \; Amp 5 50 0 \, 2 200 50 \,
+3 1100 250 \, 0 550 2350;
+#X msg -675 327 \; Cf 1000 \; Mfa 900 \; Mfb 880 \; IndexA 400 50 0
+\, 350 250 50 \, 200 1100 300 \, 125 500 1400 \; IndexB 500 50 0 \,
+220 250 50 \, 150 1100 300 \, 100 500 1400 \; Amp 4 50 0 \, 2 200 50
+\, 2.5 1100 250 \, 0 550 2350;
+#X text -525 297 Radar Beep Sound;
+#X text 9 428 Triangle Musical Instrument;
+#X msg -21 457 \; Cf 2000 \; Mfa 1500 \; Mfb 1800 \; IndexA 390 50
+0 \, 109 250 50 \, 450 1100 300 \, 100 500 1400 \; IndexB 270 50 0
+\, 54 250 50 \, 600 1100 300 \, 200 500 1400 \; Amp 3.5 50 0 \, 2.5
+200 50 \, 1.5 1100 250 \, 0 550 2350;
+#X msg 260 51 \; Cf 3000 \; Mfa 3000 \; Mfb 2800 \; IndexA 1000 50
+0 \, 750 250 50 \, 950 1100 300 \, 100 500 1400 \; IndexB 800 50 0
+\, 500 250 50 \, 600 1100 300 \, 200 500 1400 \; Amp 4.5 50 0 \, 3.5
+200 50 \, 2.5 1100 250 \, 0 550 2350;
+#X text 262 20 Scary Movie Noise;
+#X msg 216 260 \; Cf 500 \; Mfa 455 \; Mfb 450 \; IndexA 400 50 0 \,
+415 250 50 \, 400 1100 300 \, 100 500 1400 \; IndexB 425 50 0 \, 450
+250 50 \, 425 1100 300 \, 200 500 1400 \; Amp 3 50 0 \, 2 200 50 \,
+2 1100 250 \, 0 550 2350;
+#X text 233 223 Beeping Alarm;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 2 1 5 0;
+#X connect 2 2 8 0;
+#X connect 2 3 11 0;
+#X connect 2 4 9 0;
+#X coords 0 -1 1 1 110 60 2 100 100;
+#X restore -2633 -5 pd preset;
+#X text -2675 -132 0 Shaking a Flat Saw 1 Radar Beep Sound 2 Triangle
+Musical Instrument 3 Beeping Alarm 4 Scary Movie Noise;
+#X connect 1 0 12 0;
+#X connect 2 0 1 0;
+#X connect 3 0 8 0;
+#X connect 4 0 28 0;
+#X connect 5 0 4 0;
+#X connect 6 0 5 0;
+#X connect 7 0 2 0;
+#X connect 8 0 7 0;
+#X connect 9 0 3 0;
+#X connect 10 0 4 1;
+#X connect 10 0 14 0;
+#X connect 11 0 12 1;
+#X connect 11 0 16 0;
+#X connect 12 0 0 0;
+#X connect 12 0 0 1;
+#X connect 13 0 11 0;
+#X connect 14 0 15 0;
+#X connect 16 0 17 0;
+#X connect 18 0 28 1;
+#X connect 19 0 18 0;
+#X connect 20 0 19 0;
+#X connect 21 0 18 1;
+#X connect 21 0 22 0;
+#X connect 22 0 23 0;
+#X connect 24 0 6 0;
+#X connect 25 0 20 0;
+#X connect 26 0 10 0;
+#X connect 27 0 21 0;
+#X connect 28 0 2 1;
