@@ -1,0 +1,17 @@
+#N canvas 384 160 720 408 24;
+#X obj 115 246 tabplay~ a1;
+#X obj 115 173 soundfiler;
+#X msg 115 134 read -resize \$1 a1;
+#X msg 115 209 bang;
+#X obj 114 295 outlet~;
+#X obj 113 59 inlet sf;
+#X obj 371 66 inlet loop;
+#X obj 287 248 spigot;
+#X connect 0 0 4 0;
+#X connect 0 1 7 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 5 0 2 0;
+#X connect 6 0 7 1;
+#X connect 7 0 0 0;
